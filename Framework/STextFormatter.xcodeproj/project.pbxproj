@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36A7D8A72026DD6900F2E2F3 /* STextFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 36A7D8A52026DD6900F2E2F3 /* STextFormatter.h */; };
+		36A7D8A72026DD6900F2E2F3 /* STextFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 36A7D8A52026DD6900F2E2F3 /* STextFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36A7D8A82026DD6900F2E2F3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36A7D8A62026DD6900F2E2F3 /* Info.plist */; };
+		36ACC4262031915B007DFF6C /* NSString+STextFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36ACC4232031915B007DFF6C /* NSString+STextFormatter.m */; };
+		36ACC4272031915B007DFF6C /* NSString+STextFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 36ACC4242031915B007DFF6C /* NSString+STextFormatter.h */; };
+		36ACC4282031915B007DFF6C /* STextFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36ACC4252031915B007DFF6C /* STextFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3601B55B200C90960011CCAE /* STextFormatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STextFormatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A7D8A52026DD6900F2E2F3 /* STextFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STextFormatter.h; sourceTree = "<group>"; };
 		36A7D8A62026DD6900F2E2F3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		991D979493365A9421441682 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		B7165ADD6B3FC678D220B749 /* STextFormatter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = STextFormatter.podspec; path = ../STextFormatter.podspec; sourceTree = "<group>"; };
-		FDF8CBE7DAF111B1C0BBD0B0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		36ACC4232031915B007DFF6C /* NSString+STextFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+STextFormatter.m"; sourceTree = "<group>"; };
+		36ACC4242031915B007DFF6C /* NSString+STextFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+STextFormatter.h"; sourceTree = "<group>"; };
+		36ACC4252031915B007DFF6C /* STextFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STextFormatter.m; sourceTree = "<group>"; };
+		991D979493365A9421441682 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B7165ADD6B3FC678D220B749 /* STextFormatter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STextFormatter.podspec; path = ../STextFormatter.podspec; sourceTree = "<group>"; };
+		FDF8CBE7DAF111B1C0BBD0B0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,9 @@
 		36A7D8A42026DD6900F2E2F3 /* STextFormatter */ = {
 			isa = PBXGroup;
 			children = (
+				36ACC4242031915B007DFF6C /* NSString+STextFormatter.h */,
+				36ACC4232031915B007DFF6C /* NSString+STextFormatter.m */,
+				36ACC4252031915B007DFF6C /* STextFormatter.m */,
 				36A7D8A52026DD6900F2E2F3 /* STextFormatter.h */,
 				36A7D8A62026DD6900F2E2F3 /* Info.plist */,
 			);
@@ -76,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36A7D8A72026DD6900F2E2F3 /* STextFormatter.h in Headers */,
+				36ACC4272031915B007DFF6C /* NSString+STextFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +125,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3601B555200C90960011CCAE /* Build configuration list for PBXProject "PROJECT" */;
+			buildConfigurationList = 3601B555200C90960011CCAE /* Build configuration list for PBXProject "STextFormatter" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -148,6 +158,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36ACC4262031915B007DFF6C /* NSString+STextFormatter.m in Sources */,
+				36ACC4282031915B007DFF6C /* STextFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +319,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3601B555200C90960011CCAE /* Build configuration list for PBXProject "PROJECT" */ = {
+		3601B555200C90960011CCAE /* Build configuration list for PBXProject "STextFormatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3601B56D200C90960011CCAE /* Debug */,
