@@ -1,0 +1,16 @@
+PODS:
+  - STextFormatter (1.0.0)
+
+DEPENDENCIES:
+  - STextFormatter (from `../`)
+
+EXTERNAL SOURCES:
+  STextFormatter:
+    :path: ../
+
+SPEC CHECKSUMS:
+  STextFormatter: 253415f441e196648708fc21d664b688f0067252
+
+PODFILE CHECKSUM: 18be52f9b406eeef683a806c2a085674a1074a39
+
+COCOAPODS: 1.4.0
