@@ -49,7 +49,7 @@ NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
                           HasPrefix:(NSString *)prefix {
     
     if (nil != prefix || 0 != prefix.length) {
-        NSString *sub = [self substringFromIndex:prefix.length];
+        NSString *sub = [self substringFromIndex:prefix.length - 1];
         
         return [prefix stringByAppendingString:[sub splitStringWithBlocks:blocks
                                                              andDelimiter:delimiter]];

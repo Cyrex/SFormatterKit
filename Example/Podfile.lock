@@ -1,7 +1,11 @@
 PODS:
+  - Nimble (7.0.3)
+  - Quick (1.2.0)
   - STextFormatter (1.0.0)
 
 DEPENDENCIES:
+  - Nimble
+  - Quick
   - STextFormatter (from `../`)
 
 EXTERNAL SOURCES:
@@ -9,8 +13,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  STextFormatter: 253415f441e196648708fc21d664b688f0067252
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  STextFormatter: ee8e522af6cc910ef070860e9c64915d31841137
 
-PODFILE CHECKSUM: 18be52f9b406eeef683a806c2a085674a1074a39
+PODFILE CHECKSUM: b5d2ee17a2eda7d04a785f3972613c36da1727f6
 
 COCOAPODS: 1.4.0
