@@ -12,6 +12,7 @@
 //
 
 #import "BaseViewController.h"
+#import "STextFormatter.h"
 
 @interface BaseViewController ()
 

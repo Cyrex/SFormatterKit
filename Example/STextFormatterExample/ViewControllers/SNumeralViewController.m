@@ -16,17 +16,15 @@
 
 @interface SNumeralViewController ()
 
-@property (nonatomic, strong) STextFormatter   *formatter;
-
 @end
 
 @implementation SNumeralViewController
 #pragma mark - Life Cycle
 - (instancetype)initWithTitle:(NSString *)title {
     if (self = [super initWithTitle:title]) {
-        _formatter = [[STextFormatter alloc] initWithTextField:self.baseField];
-        _formatter.category = STextFormatterCategoryNumeral;
-        _formatter.numeralGroupStyle = SNumeralGroupStyleThousand;
+        self.formatter = [[STextFormatter alloc] initWithTextField:self.baseField];
+        self.formatter.category = STextFormatterCategoryNumeral;
+        self.formatter.numeralGroupStyle = SNumeralGroupStyleThousand;
     }
     
     return self;

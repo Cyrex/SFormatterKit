@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360E2DF7203335A5007A6A8A /* STextFormatterPhoneNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 360E2DF6203335A5007A6A8A /* STextFormatterPhoneNumberTest.m */; };
+		360E2DF92033362F007A6A8A /* STextFormatterDateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 360E2DF82033362F007A6A8A /* STextFormatterDateTest.m */; };
+		360E2DFB20333696007A6A8A /* STextFormatterNumeralTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 360E2DFA20333696007A6A8A /* STextFormatterNumeralTest.m */; };
+		360E2DFD203336D1007A6A8A /* STextFormatterCustomTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 360E2DFC203336D1007A6A8A /* STextFormatterCustomTest.m */; };
 		361005A820329CDC008451BE /* STextFormatterExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 361005A720329CDC008451BE /* STextFormatterExampleTests.m */; };
+		361005AA2032F95B008451BE /* STextFormatterCreditCardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 361005A92032F95B008451BE /* STextFormatterCreditCardTest.m */; };
 		3615FF042031833D007C3C2B /* STextFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3615FF032031833D007C3C2B /* STextFormatter.m */; };
 		3615FF0720318402007C3C2B /* NSString+STextFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3615FF0620318402007C3C2B /* NSString+STextFormatter.m */; };
 		3615FF0C20318744007C3C2B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3615FF0B20318744007C3C2B /* BaseViewController.m */; };
@@ -42,7 +47,12 @@
 
 /* Begin PBXFileReference section */
 		02D9B56B9DD0C3F1FEE6AB72 /* Pods-STextFormatterExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STextFormatterExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STextFormatterExampleTests/Pods-STextFormatterExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		360E2DF6203335A5007A6A8A /* STextFormatterPhoneNumberTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STextFormatterPhoneNumberTest.m; sourceTree = "<group>"; };
+		360E2DF82033362F007A6A8A /* STextFormatterDateTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STextFormatterDateTest.m; sourceTree = "<group>"; };
+		360E2DFA20333696007A6A8A /* STextFormatterNumeralTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STextFormatterNumeralTest.m; sourceTree = "<group>"; };
+		360E2DFC203336D1007A6A8A /* STextFormatterCustomTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STextFormatterCustomTest.m; sourceTree = "<group>"; };
 		361005A720329CDC008451BE /* STextFormatterExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STextFormatterExampleTests.m; sourceTree = "<group>"; };
+		361005A92032F95B008451BE /* STextFormatterCreditCardTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STextFormatterCreditCardTest.m; sourceTree = "<group>"; };
 		3615FF01203182EF007C3C2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3615FF022031833D007C3C2B /* STextFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STextFormatter.h; sourceTree = "<group>"; };
 		3615FF032031833D007C3C2B /* STextFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STextFormatter.m; sourceTree = "<group>"; };
@@ -146,6 +156,11 @@
 			children = (
 				362306B520271CB40058A7FF /* Supporting Files */,
 				361005A720329CDC008451BE /* STextFormatterExampleTests.m */,
+				361005A92032F95B008451BE /* STextFormatterCreditCardTest.m */,
+				360E2DF6203335A5007A6A8A /* STextFormatterPhoneNumberTest.m */,
+				360E2DF82033362F007A6A8A /* STextFormatterDateTest.m */,
+				360E2DFA20333696007A6A8A /* STextFormatterNumeralTest.m */,
+				360E2DFC203336D1007A6A8A /* STextFormatterCustomTest.m */,
 			);
 			path = STextFormatterExampleTests;
 			sourceTree = "<group>";
@@ -449,7 +464,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				360E2DFD203336D1007A6A8A /* STextFormatterCustomTest.m in Sources */,
+				361005AA2032F95B008451BE /* STextFormatterCreditCardTest.m in Sources */,
+				360E2DF92033362F007A6A8A /* STextFormatterDateTest.m in Sources */,
 				361005A820329CDC008451BE /* STextFormatterExampleTests.m in Sources */,
+				360E2DFB20333696007A6A8A /* STextFormatterNumeralTest.m in Sources */,
+				360E2DF7203335A5007A6A8A /* STextFormatterPhoneNumberTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

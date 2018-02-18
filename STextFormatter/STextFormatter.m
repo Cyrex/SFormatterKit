@@ -5,11 +5,6 @@
 //  Author:    ZhiweiSun @Cyrex
 //  E-mail:    szwathub@gmail.com
 //
-//  Description:
-//
-//  History:
-//      2018/2/12: Created by Cyrex on 2018/2/12
-//
 
 #import "NSString+STextFormatter.h"
 
@@ -31,15 +26,16 @@ NSString *const SDiscoverReg = @"^(?:6011|65\\d{0,2}|64[4-9]\\d?)\\d{0,12}";
 // starts with 51-55/22-27; 16 digits
 NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
 
-#define SCreditCardPre(type, string)   \
-[[NSPredicate predicateWithFormat:@"SELF MATCHES %@", S##type##Reg] evaluateWithObject:string]
+#define SCreditCardPre(type, string) [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", S##type##Reg] evaluateWithObject:string]
 
 @interface STextFormatter () <UITextFieldDelegate>
 
-@property (nonatomic, assign) NSInteger      preLen;
-@property (nonatomic, weak) UITextField      *field;
+@property (nonatomic, assign) NSInteger preLen;
+@property (nonatomic, weak) UITextField *field;
 
-@property (nonatomic) SCreditCardType       creditCardType;
+@property (nonatomic, assign) BOOL shouldDeleteSuffix;
+
+@property (nonatomic) SCreditCardType creditCardType;
 
 @end
 
@@ -48,11 +44,10 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
 - (instancetype)initWithTextField:(UITextField *)textField {
     if (self = [super init]) {
         textField.delegate  = self;
-        _field              = textField;
-        _limitedLength      = INT8_MAX;
-        [_field addTarget:self
-                   action:@selector(valueChanged:)
-         forControlEvents:UIControlEventAllEditingEvents];
+        self.shouldDeleteSuffix = NO;
+        _field                  = textField;
+        _limitedLength          = INT8_MAX;
+        [_field addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventAllEditingEvents];
     }
     
     return self;
@@ -61,8 +56,8 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (range.length >= 1
-        || [self canEdit:[_field.text stringByReplacingCharactersInRange:range withString:string]]) {
+    self.shouldDeleteSuffix = (range.length >= 1);
+    if (range.length >= 1 || [self canEdit:[_field.text stringByReplacingCharactersInRange:range withString:string]]) {
         return YES;
     }
     
@@ -134,8 +129,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
 }
 
 - (void)valueChanged:(NSNotification *)notic {
-    NSString *noDelimiterStr = [_field.text stringByReplacingOccurrencesOfString:self.delimiter
-                                                                      withString:@""];
+    NSString *noDelimiterStr = [_field.text stringByReplacingOccurrencesOfString:self.delimiter withString:@""];
     
     if (STextFormatterCategoryCreditCard == _category) {
         BOOL creditCardTypeChanged = NO;
@@ -148,19 +142,23 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
             [_creditCardDelegate onCreditCardTypeChanged:_creditCardType];
         }
     }
-    if (_preLen > _field.text.length) {
-        _preLen = _field.text.length;
-        return ;
-    }
+//    if (_preLen > _field.text.length) {
+//        _preLen = _field.text.length;
+//        return ;
+//    }
     
     switch (_category) {
-        case STextFormatterCategoryCreditCard:
-            _field.text = [noDelimiterStr splitStringWithBlocks:self.blocks
-                                                   andDelimiter:self.delimiter
-                                                      HasPrefix:nil];
+        case STextFormatterCategoryCreditCard: {
+            NSString *tmp = [noDelimiterStr splitStringWithBlocks:self.blocks delimiter:self.delimiter andPrefix:nil];
+            if ([tmp hasSuffix:self.delimiter] && self.shouldDeleteSuffix) {
+                _field.text = [tmp substringToIndex:tmp.length - 1];
+            } else {
+                _field.text = tmp;
+            }
+        }
             break;
         case STextFormatterCategoryDate:
-            _field.text = [_field.text checkDate:_dateFormatPattern withDelimiter:self.delimiter];
+            _field.text = [_field.text checkDate:_dateFormatPattern andDelimiter:self.delimiter];
             break;
         case STextFormatterCategoryPhoneNumber:
         case STextFormatterCategoryNumeral:
@@ -170,7 +168,6 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     }
     
     _preLen = _field.text.length;
-    
 }
 
 
@@ -240,10 +237,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
         case STextFormatterCategoryNone:
             return nil;
         case STextFormatterCategoryCustom:
-            if (_blocks) {
-                return _blocks;
-            }
-            return nil;
+            return _blocks ? _blocks : nil;
         case STextFormatterCategoryPhoneNumber:
         case STextFormatterCategoryDate:
             switch (_dateFormatPattern) {

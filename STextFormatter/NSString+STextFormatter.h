@@ -9,19 +9,16 @@
 //
 //  History:
 //      2018/2/12: Created by Cyrex on 2018/2/12
-//
+//      2018/2/18: Refactor method for spliting string with blocks.
 
 #import "STextFormatter.h"
 
 @interface NSString (STextFormatter)
-- (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks
-                       andDelimiter:(NSString *)delimiter;
 
-- (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks
-                       andDelimiter:(NSString *)delimiter
-                          HasPrefix:(NSString *)prefix;
+- (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks andDelimiter:(NSString *)delimiter;
 
-- (NSString *)checkDate:(SDateFormatPattern)pattern
-          withDelimiter:(NSString *)delimiter;
+- (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks delimiter:(NSString *)delimiter andPrefix:(NSString *)prefix;
+
+- (NSString *)checkDate:(SDateFormatPattern)pattern andDelimiter:(NSString *)delimiter;
 
 @end
