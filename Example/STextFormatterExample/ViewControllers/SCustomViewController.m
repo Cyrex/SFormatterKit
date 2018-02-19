@@ -16,19 +16,16 @@
 
 @interface SCustomViewController ()
 
-@property (nonatomic, strong) STextFormatter   *formatter;
-
-
 @end
 
 @implementation SCustomViewController
 #pragma mark - Init
 - (instancetype)initWithTitle:(NSString *)title {
     if (self = [super initWithTitle:title]) {
-        _formatter = [[STextFormatter alloc] initWithTextField:self.baseField];
-        _formatter.category = STextFormatterCategoryCustom;
-        _formatter.blocks = [NSArray arrayWithObjects:@1, @2, @3, nil];
-        _formatter.delimiter = @"-";
+        self.formatter = [[STextFormatter alloc] initWithTextField:self.baseField];
+        self.formatter.category = STextFormatterCategoryCustom;
+        self.formatter.blocks = [NSArray arrayWithObjects:@1, @2, @3, nil];
+        self.formatter.delimiter = @"-";
     }
     
     return self;

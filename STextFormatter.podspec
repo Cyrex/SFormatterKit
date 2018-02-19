@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Format your input content when you are typing.
+A simple library for formatting your input content when you are typing.
                        DESC
 
   s.homepage         = 'https://github.com/Cyrex/STextFormatter'

@@ -13,9 +13,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class STextFormatter;
+
 @interface BaseViewController : UIViewController
 
-@property (nonatomic, strong) UITextField   *baseField;
+@property (nonatomic, strong) STextFormatter *formatter;
+
+@property (nonatomic, strong) UITextField *baseField;
 
 - (instancetype)initWithTitle:(NSString *)title;
 

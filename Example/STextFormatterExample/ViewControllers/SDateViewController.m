@@ -16,8 +16,6 @@
 
 @interface SDateViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (nonatomic, strong) STextFormatter   *formatter;
-
 @property (nonatomic, strong) UIPickerView      *pickView;
 
 @end
@@ -26,10 +24,11 @@
 #pragma mark - Life Cycle
 - (instancetype)initWithTitle:(NSString *)title {
     if (self = [super initWithTitle:title]) {
-        _formatter = [[STextFormatter alloc] initWithTextField:self.baseField];
-        _formatter.category = STextFormatterCategoryDate;
+        self.formatter = [[STextFormatter alloc] initWithTextField:self.baseField];
+        self.formatter.category = STextFormatterCategoryDate;
+        self.formatter.dateFormatPattern = SDateFormatPatternYMD;
         
-        _pickView = [[UIPickerView alloc] initWithFrame:CGRectMake(50, 150, SCREEN_WIDTH - 100, 40)];
+        _pickView = [[UIPickerView alloc] initWithFrame:CGRectMake(50, 250, SCREEN_WIDTH - 100, 40)];
         _pickView.tag = 1000;
         _pickView.dataSource = self;
         _pickView.delegate = self;
@@ -56,23 +55,19 @@
     return 2;
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView
-             titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (0 == row) {
         return @"YYYY/MM/DD";
-    }
-    else {
+    } else {
         return @"MM/DD";
     }
 }
 
-- (void)pickerView:(UIPickerView *)pickerView
-      didSelectRow:(NSInteger)row
-       inComponent:(NSInteger)component {
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (0 == row) {
-        _formatter.dateFormatPattern = SDateFormatPatternYMD;
+        self.formatter.dateFormatPattern = SDateFormatPatternYMD;
     } else {
-        _formatter.dateFormatPattern = SDateFormatPatternMD;
+        self.formatter.dateFormatPattern = SDateFormatPatternMD;
     }
 }
 

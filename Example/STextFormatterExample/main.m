@@ -6,11 +6,9 @@
 //  E-mail:    szwathub@gmail.com
 //
 
-@import UIKit;
 #import "SAppDelegate.h"
 
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]) {
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([SAppDelegate class]));
     }

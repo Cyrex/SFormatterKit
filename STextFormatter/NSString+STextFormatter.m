@@ -5,11 +5,6 @@
 //  Author:    ZhiweiSun @Cyrex
 //  E-mail:    szwathub@gmail.com
 //
-//  Description:
-//
-//  History:
-//      2018/2/12: Created by Cyrex on 2018/2/12
-//
 
 #import "NSString+STextFormatter.h"
 
@@ -19,75 +14,64 @@ NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
 #define SDatePre(type) [NSPredicate predicateWithFormat:@"SELF MATCHES %@", S##type##Reg]
 
 @implementation NSString (STextFormatter)
-- (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks
-                       andDelimiter:(NSString *)delimiter {
+- (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks andDelimiter:(NSString *)delimiter {
+    __block NSMutableString *result = [NSMutableString string];
+    __block NSMutableString *leftString    = [NSMutableString stringWithString:self];
     
-    NSMutableString *result = [NSMutableString string];
-    NSMutableString *sub    = [NSMutableString stringWithString:self];
-    
-    NSNumber *block;
-    for (int idx = 0; idx < blocks.count; idx++) {
-        block = [blocks objectAtIndex:idx];
-        
-        if (sub.length > block.integerValue) {
-            result = (NSMutableString *)[result stringByAppendingString:[[sub substringToIndex:block.integerValue] stringByAppendingString:delimiter]];
-            sub = (NSMutableString *)[sub substringFromIndex:block.integerValue];
-        } else if (sub.length == block.integerValue && idx != blocks.count - 1) {
-            result = (NSMutableString *)[result stringByAppendingString:[sub stringByAppendingString:delimiter]];
-            return [result copy];
+    [blocks enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *stop) {
+        if (leftString.length > [obj integerValue]) {
+            NSString *block = [leftString substringToIndex:[obj integerValue]];
+            result = (NSMutableString *)[result stringByAppendingString:[block stringByAppendingString:delimiter]];
+            leftString = (NSMutableString *)[leftString substringFromIndex:[obj integerValue]];
+        } else if (leftString.length == [obj integerValue] && (blocks.count - 1) != idx) {
+            result = (NSMutableString *)[result stringByAppendingString:[leftString stringByAppendingString:delimiter]];
+            *stop = YES;
         } else {
-            result = (NSMutableString *)[result stringByAppendingString:sub];
-            return [result copy];
+            result = (NSMutableString *)[result stringByAppendingString:leftString];
+            *stop = YES;
         }
-    }
+    }];
     
     return [result copy];
 }
 
-- (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks
-                       andDelimiter:(NSString *)delimiter
-                          HasPrefix:(NSString *)prefix {
-    
+- (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks delimiter:(NSString *)delimiter andPrefix:(NSString *)prefix {
     if (nil != prefix || 0 != prefix.length) {
-        NSString *sub = [self substringFromIndex:prefix.length];
+        NSString *sub = [self substringFromIndex:prefix.length - 1];
         
-        return [prefix stringByAppendingString:[sub splitStringWithBlocks:blocks
-                                                             andDelimiter:delimiter]];
+        return [prefix stringByAppendingString:[sub splitStringWithBlocks:blocks andDelimiter:delimiter]];
     }
     
-    return [self splitStringWithBlocks:blocks
-                          andDelimiter:delimiter];
+    return [self splitStringWithBlocks:blocks andDelimiter:delimiter];
 }
 
-- (NSString *)checkDate:(SDateFormatPattern)pattern
-          withDelimiter:(NSString *)delimiter {
-    
-    NSArray<NSString *> *test = [self componentsSeparatedByString:delimiter];
+- (NSString *)checkDate:(SDateFormatPattern)pattern andDelimiter:(NSString *)delimiter {
+    NSArray<NSString *> *splitString = [self componentsSeparatedByString:delimiter];
     
     NSMutableString *result = [NSMutableString string];
     
-    NSString *_year = [NSString string];
+    NSString *_year  = [NSString string];
     NSString *_month = [NSString string];
-    NSString *_day = [NSString string];
+    NSString *_day   = [NSString string];
     
     switch (pattern) {
         case SDateFormatPatternYMD:
-            switch (test.count) {
+            switch (splitString.count) {
                 case 3:
-                    _day   = test[2];
+                    _day   = splitString[2];
                 case 2:
-                    _month = test[1];
+                    _month = splitString[1];
                 case 1:
-                    _year  = test[0];
+                    _year  = splitString[0];
                     break;
             }
             break;
         case SDateFormatPatternMD:
-            switch (test.count) {
+            switch (splitString.count) {
                 case 2:
-                    _day   = test[1];
+                    _day   = splitString[1];
                 case 1:
-                    _month = test[0];
+                    _month = splitString[0];
                     break;
             }
     }
@@ -111,7 +95,7 @@ NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
     }
     
     
-    if (test.count > 1) {
+    if (splitString.count > 1) {
         if ([_day isEqualToString:@"00"]) {
             result = (NSMutableString *)[result stringByAppendingString:@"01"];
         } else if (1 == _day.length && [_day intValue] > 3) {

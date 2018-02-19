@@ -16,16 +16,14 @@
 
 @interface SPhoneNumberViewController ()
 
-@property (nonatomic, strong) STextFormatter   *formatter;
-
 @end
 
 @implementation SPhoneNumberViewController
 #pragma mark - Life Cycle
 - (instancetype)initWithTitle:(NSString *)title {
     if (self = [super initWithTitle:title]) {
-        _formatter = [[STextFormatter alloc] initWithTextField:self.baseField];
-        _formatter.category = STextFormatterCategoryPhoneNumber;
+        self.formatter = [[STextFormatter alloc] initWithTextField:self.baseField];
+        self.formatter.category = STextFormatterCategoryPhoneNumber;
     }
     
     return self;
