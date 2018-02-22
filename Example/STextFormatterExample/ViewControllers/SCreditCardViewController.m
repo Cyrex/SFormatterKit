@@ -25,18 +25,18 @@
 - (instancetype)initWithTitle:(NSString *)title {
     if (self = [super initWithTitle:title]) {
         self.formatter = [[STextFormatter alloc] initWithTextField:self.baseField];
-        
+
         self.formatter.category = STextFormatterCategoryCreditCard;
         self.formatter.creditCardDelegate = self;
         self.formatter.delegate  = self;
     }
-    
+
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self.view addSubview:self.creditCardImage];
 }
 
@@ -88,7 +88,7 @@
     if (!_creditCardImage) {
         _creditCardImage = [[UIImageView alloc] initWithFrame:CGRectMake(50, 250, 64, 42)];
     }
-    
+
     return _creditCardImage;
 }
 

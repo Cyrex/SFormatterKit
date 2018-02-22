@@ -34,7 +34,7 @@
         _pickView.delegate = self;
         [self.view addSubview:_pickView];
     }
-    
+
     return self;
 }
 

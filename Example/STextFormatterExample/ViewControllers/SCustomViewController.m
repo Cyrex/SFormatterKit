@@ -27,7 +27,7 @@
         self.formatter.blocks = [NSArray arrayWithObjects:@1, @2, @3, nil];
         self.formatter.delimiter = @"-";
     }
-    
+
     return self;
 }
 

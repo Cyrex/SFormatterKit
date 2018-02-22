@@ -17,7 +17,7 @@ NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
 - (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks andDelimiter:(NSString *)delimiter {
     __block NSMutableString *result = [NSMutableString string];
     __block NSMutableString *leftString    = [NSMutableString stringWithString:self];
-    
+
     [blocks enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *stop) {
         if (leftString.length > [obj integerValue]) {
             NSString *block = [leftString substringToIndex:[obj integerValue]];
@@ -38,22 +38,22 @@ NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
 - (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks delimiter:(NSString *)delimiter andPrefix:(NSString *)prefix {
     if (nil != prefix || 0 != prefix.length) {
         NSString *sub = [self substringFromIndex:prefix.length - 1];
-        
+
         return [prefix stringByAppendingString:[sub splitStringWithBlocks:blocks andDelimiter:delimiter]];
     }
-    
+
     return [self splitStringWithBlocks:blocks andDelimiter:delimiter];
 }
 
-- (NSString *)checkDate:(SDateFormatPattern)pattern andDelimiter:(NSString *)delimiter {
+- (NSString *)formatterDateWithPattern:(SDateFormatPattern)pattern andDelimiter:(NSString *)delimiter {
     NSArray<NSString *> *splitString = [self componentsSeparatedByString:delimiter];
-    
+
     NSMutableString *result = [NSMutableString string];
-    
+
     NSString *_year  = [NSString string];
     NSString *_month = [NSString string];
     NSString *_day   = [NSString string];
-    
+
     switch (pattern) {
         case SDateFormatPatternYMD:
             switch (splitString.count) {
@@ -75,7 +75,7 @@ NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
                     break;
             }
     }
-    
+
     if (SDateFormatPatternYMD == pattern) {
         if (_year.length < 4) {
             result = (NSMutableString *)[result stringByAppendingString:_year];
@@ -83,7 +83,7 @@ NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
             result = (NSMutableString *)[result stringByAppendingString:[NSString stringWithFormat:@"%@/", _year]];
         }
     }
-    
+
     if ([_month isEqualToString:@"00"]) {
         result = (NSMutableString *)[result stringByAppendingString:@"01/"];
     } else if (1 == _month.length && [_month intValue] > 1) {
@@ -93,8 +93,8 @@ NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
     } else if (![_month isEqualToString:@""]){
         result = (NSMutableString *)[result stringByAppendingString:[NSString stringWithFormat:@"%@/", _month]];
     }
-    
-    
+
+
     if (splitString.count > 1) {
         if ([_day isEqualToString:@"00"]) {
             result = (NSMutableString *)[result stringByAppendingString:@"01"];
@@ -106,7 +106,7 @@ NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
             result = (NSMutableString *)[result stringByAppendingString:_day];
         }
     }
-    
+
     return result;
 }
 

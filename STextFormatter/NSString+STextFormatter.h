@@ -19,6 +19,6 @@
 
 - (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks delimiter:(NSString *)delimiter andPrefix:(NSString *)prefix;
 
-- (NSString *)checkDate:(SDateFormatPattern)pattern andDelimiter:(NSString *)delimiter;
+- (NSString *)formatterDateWithPattern:(SDateFormatPattern)pattern andDelimiter:(NSString *)delimiter;
 
 @end

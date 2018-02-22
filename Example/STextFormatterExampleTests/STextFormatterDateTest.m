@@ -27,11 +27,11 @@ QuickSpecBegin(STextFormatterDateTest)
         beforeEach(^{
             [viewController viewDidLoad];
         });
-        
+
         it(@"text formatter should not be nil", ^{
             expect(viewController.formatter).notTo(beNil());
         });
-        
+
         it(@"set date", ^{
             [viewController.baseField setText:@"1995"];
             expect(viewController.baseField.text).to(equal(@"1995"));

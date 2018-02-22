@@ -46,13 +46,13 @@ __button.backgroundColor     = [UIColor whiteColor];    \
     if (self = [super init]) {
         ;
     }
-    
+
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self configViews];
 }
 
@@ -60,37 +60,37 @@ __button.backgroundColor     = [UIColor whiteColor];    \
 #pragma mark - Private Methods
 - (void)configViews {
     self.view.backgroundColor = UIColorFromRGB(245, 245, 249);
-    
+
     ButtonMake(_creditCard, CGRectMake(40, 100, SCREEN_WIDTH - 80, 40));
     [_creditCard setTitle:@"Credit Card" forState:UIControlStateNormal];
     [_creditCard addTarget:self
                     action:@selector(creditCardTest)
           forControlEvents:UIControlEventTouchUpInside];
-    
+
     ButtonMake(_phoneNumber, CGRectMake(40, 100 + BASE_HEIGHT, SCREEN_WIDTH - 80, 40));
     [_phoneNumber setTitle:@"Phone Number" forState:UIControlStateNormal];
     [_phoneNumber addTarget:self
                      action:@selector(phoneNumberTest)
            forControlEvents:UIControlEventTouchUpInside];
-    
+
     ButtonMake(_date, CGRectMake(40, 100 + 2 * BASE_HEIGHT, SCREEN_WIDTH - 80, 40));
     [_date setTitle:@"Date" forState:UIControlStateNormal];
     [_date addTarget:self
               action:@selector(dateTest)
     forControlEvents:UIControlEventTouchUpInside];
-    
+
     ButtonMake(_numberal, CGRectMake(40, 100 + 3 * BASE_HEIGHT, SCREEN_WIDTH - 80, 40));
     [_numberal setTitle:@"Numberal" forState:UIControlStateNormal];
     [_numberal addTarget:self
                   action:@selector(numberalTest)
         forControlEvents:UIControlEventTouchUpInside];
-    
+
     ButtonMake(_custom, CGRectMake(40, 100 + 4 * BASE_HEIGHT, SCREEN_WIDTH - 80, 40));
     [_custom setTitle:@"Custom" forState:UIControlStateNormal];
     [_custom addTarget:self
                 action:@selector(customTest)
       forControlEvents:UIControlEventTouchUpInside];
-    
+
     [self.view addSubview:_creditCard];
     [self.view addSubview:_phoneNumber];
     [self.view addSubview:_date];

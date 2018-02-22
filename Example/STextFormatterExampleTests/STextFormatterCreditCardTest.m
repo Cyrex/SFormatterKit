@@ -27,11 +27,11 @@ QuickSpecBegin(STextFormatterCreditCardTest)
         beforeEach(^{
             [viewController viewDidLoad];
         });
-        
+
         it(@"text formatter should not be nil", ^{
             expect(viewController.formatter).notTo(beNil());
         });
-        
+
         it(@"asd", ^{
             [viewController.baseField setText:@"4662"];
             expect(viewController.baseField.text).to(equal(@"4662"));

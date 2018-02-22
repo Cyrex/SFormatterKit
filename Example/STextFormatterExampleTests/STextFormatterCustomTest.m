@@ -27,7 +27,7 @@ QuickSpecBegin(STextFormatterCustomTest)
         beforeEach(^{
             [viewController viewDidLoad];
         });
-        
+
         it(@"text formatter should not be nil", ^{
             expect(viewController.formatter).notTo(beNil());
         });

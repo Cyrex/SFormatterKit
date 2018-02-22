@@ -158,7 +158,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
         }
             break;
         case STextFormatterCategoryDate:
-            _field.text = [_field.text checkDate:_dateFormatPattern andDelimiter:self.delimiter];
+            _field.text = [_field.text formatterDateWithPattern:self.dateFormatPattern andDelimiter:self.delimiter];
             break;
         case STextFormatterCategoryPhoneNumber:
         case STextFormatterCategoryNumeral:
