@@ -8,15 +8,10 @@
 
 #import "NSString+STextFormatter.h"
 
-NSString *const SDateMonthReg = @"^(1[012]";
-NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
-
-#define SDatePre(type) [NSPredicate predicateWithFormat:@"SELF MATCHES %@", S##type##Reg]
-
 @implementation NSString (STextFormatter)
 - (NSString *)splitStringWithBlocks:(NSArray<NSNumber *> *)blocks andDelimiter:(NSString *)delimiter {
     __block NSMutableString *result = [NSMutableString string];
-    __block NSMutableString *leftString    = [NSMutableString stringWithString:self];
+    __block NSMutableString *leftString  = [NSMutableString stringWithString:self];
 
     [blocks enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *stop) {
         if (leftString.length > [obj integerValue]) {
@@ -83,31 +78,64 @@ NSString *const SDateDayReg   = @"^(0[1-9]|[12][0-9])";
             result = (NSMutableString *)[result stringByAppendingString:[NSString stringWithFormat:@"%@/", _year]];
         }
     }
-
+    
     if ([_month isEqualToString:@"00"]) {
         result = (NSMutableString *)[result stringByAppendingString:@"01/"];
     } else if (1 == _month.length && [_month intValue] > 1) {
         result = (NSMutableString *)[result stringByAppendingString:[NSString stringWithFormat:@"0%@/", _month]];
     } else if ([_month intValue] > 12) {
         result = (NSMutableString *)[result stringByAppendingString:@"12/"];
-    } else if (![_month isEqualToString:@""]){
+    } else if (2 == _month.length) {
         result = (NSMutableString *)[result stringByAppendingString:[NSString stringWithFormat:@"%@/", _month]];
+    } else {
+        result = (NSMutableString *)[result stringByAppendingString:_month];
     }
 
-
     if (splitString.count > 1) {
+        NSInteger monthDays = [self checkDayCountInMonth:[_month integerValue] year:[_year integerValue]];
         if ([_day isEqualToString:@"00"]) {
             result = (NSMutableString *)[result stringByAppendingString:@"01"];
         } else if (1 == _day.length && [_day intValue] > 3) {
             result = (NSMutableString *)[result stringByAppendingString:[NSString stringWithFormat:@"0%@", _day]];
-        } else if ([_month intValue] > 31) {
-            result = (NSMutableString *)[result stringByAppendingString:@"31"];
+        } else if ([_day intValue] > monthDays) {
+            result = (NSMutableString *)[result stringByAppendingString:[NSString stringWithFormat:@"%@", @(monthDays)]];
         } else {
             result = (NSMutableString *)[result stringByAppendingString:_day];
         }
     }
 
     return result;
+}
+
+
+#pragma mark - Private Methods
+- (BOOL)isIntercalaryYear:(NSInteger)year {
+    if ((0 == year % 4 && 0 != year % 100) || 0 == year % 400) {
+        return YES;
+    }
+
+    return NO;
+}
+
+- (NSInteger)checkDayCountInMonth:(NSInteger)month year:(NSInteger)year {
+    if (2 == month && [self isIntercalaryYear:year]) {
+        return 29;
+    }
+    
+    NSInteger index = 1;
+    if (month >= 1 && month <= 12) {
+        index = month;
+    } else if (month < 1) {
+        month = 1;
+    } else {
+        month = 12;
+    }
+
+    return [[[self monthDays] objectAtIndex:index - 1] integerValue];
+}
+
+- (NSArray <NSNumber *> *)monthDays {
+    return @[@(31), @(28), @(31), @(30), @(31), @(30), @(31), @(31), @(30), @(31), @(30), @(31)];
 }
 
 @end

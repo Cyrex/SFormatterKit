@@ -34,6 +34,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
 @property (nonatomic, weak) UITextField *field;
 
 @property (nonatomic, assign) BOOL shouldDeleteSuffix;
+@property (nonatomic, strong) NSString *deleteString;
 
 @property (nonatomic) SCreditCardType creditCardType;
 
@@ -45,6 +46,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     if (self = [super init]) {
         textField.delegate  = self;
         self.shouldDeleteSuffix = NO;
+        self.deleteString       = @"";
         _field                  = textField;
         _limitedLength          = INT8_MAX;
         [_field addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventAllEditingEvents];
@@ -57,10 +59,13 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     self.shouldDeleteSuffix = (range.length >= 1);
+    if (self.shouldDeleteSuffix) {
+        self.deleteString = [_field.text substringWithRange:range];
+    }
     if (range.length >= 1 || [self canEdit:[_field.text stringByReplacingCharactersInRange:range withString:string]]) {
         return YES;
     }
-    
+
     return NO;
 }
 
@@ -68,7 +73,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     if ([_delegate respondsToSelector:@selector(s_textFieldShouldBeginEditing:)]) {
         return [_delegate s_textFieldShouldClear:textField];
     }
-    
+
     return YES;
 }
 
@@ -82,7 +87,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     if ([_delegate respondsToSelector:@selector(s_textFieldShouldEndEditing:)]) {
         return [_delegate s_textFieldShouldEndEditing:textField];
     }
-    
+
     return YES;
 }
 
@@ -96,7 +101,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     if ([_delegate respondsToSelector:@selector(s_textFieldShouldClear:)]) {
         return [_delegate s_textFieldShouldClear:textField];
     }
-    
+
     return YES;
 }
 
@@ -104,7 +109,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     if ([_delegate respondsToSelector:@selector(s_textFieldShouldReturn:)]) {
         return [_delegate s_textFieldShouldReturn:textField];
     }
-    
+
     return YES;
 }
 
@@ -157,8 +162,14 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
             }
         }
             break;
-        case STextFormatterCategoryDate:
-            _field.text = [_field.text formatterDateWithPattern:self.dateFormatPattern andDelimiter:self.delimiter];
+        case STextFormatterCategoryDate: {
+            NSString *tmp = [_field.text formatterDateWithPattern:self.dateFormatPattern andDelimiter:self.delimiter];
+            if ([self.deleteString isEqualToString:self.delimiter] && self.shouldDeleteSuffix) {
+                _field.text = [tmp substringToIndex:tmp.length - 2];
+            } else {
+                _field.text = tmp;
+            }
+        }
             break;
         case STextFormatterCategoryPhoneNumber:
         case STextFormatterCategoryNumeral:

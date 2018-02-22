@@ -39,16 +39,22 @@ QuickSpecBegin(STextFormatterExampleTest)
             expect([@"1995" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"1995/"));
             expect([@"199" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"199"));
             expect([@"1995/3" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"1995/03/"));
-//            expect([@"1995/1" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"1995/1"));
+            expect([@"1995/00" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"1995/01/"));
+            expect([@"1995/13" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"1995/12/"));
+            expect([@"1995/1" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"1995/1"));
             expect([@"1995/12/5" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"1995/12/05"));
             expect([@"1995/12/2" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"1995/12/2"));
+            expect([@"1995/02/29" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"1995/02/28"));
+            expect([@"2000/02/29" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"]).to(equal(@"2000/02/29"));
 
             expect([@"5" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"]).to(equal(@"05/"));
-//            expect([@"1" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"]).to(equal(@"1"));
+            expect([@"1" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"]).to(equal(@"1"));
             expect([@"12" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"]).to(equal(@"12/"));
             expect([@"13" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"]).to(equal(@"12/"));
             expect([@"01/9" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"]).to(equal(@"01/09"));
             expect([@"00" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"]).to(equal(@"01/"));
+            expect([@"02/00" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"]).to(equal(@"02/01"));
+            expect([@"02/29" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"]).to(equal(@"02/29"));
         });
     });
 QuickSpecEnd

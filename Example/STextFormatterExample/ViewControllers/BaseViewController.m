@@ -14,8 +14,6 @@
 #import "BaseViewController.h"
 #import "STextFormatter.h"
 
-#import "NSString+STextFormatter.h"
-
 extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
 
 @interface BaseViewController ()
@@ -63,19 +61,6 @@ extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
     }
 
     return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-//    size_t const count = 1000;
-    uint64_t time = dispatch_benchmark(10000, ^{
-        @autoreleasepool {
-            [@"1222222333" splitStringWithBlocks:@[@1, @6, @3, @4] andDelimiter:@" "];
-        }
-    });
-
-    NSLog(@"-: %llu ns", time);
 }
 
 
