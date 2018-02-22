@@ -9,8 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 <for new features.>
 
 ### Changed
-<for changes in existing functionality.>
-- refactor method for spliting string with blocks.
+* refactor method for spliting string with blocks.
 
 ### Deprecated
 <for soon-to-be removed features.>
