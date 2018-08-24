@@ -1,0 +1,702 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36A1F04320E39042002C37E5 /* SViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03420E39042002C37E5 /* SViewController.m */; };
+		36A1F04420E39042002C37E5 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03520E39042002C37E5 /* SAppDelegate.m */; };
+		36A1F04520E39042002C37E5 /* SDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03720E39042002C37E5 /* SDateViewController.m */; };
+		36A1F04620E39042002C37E5 /* SCreditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03820E39042002C37E5 /* SCreditCardViewController.m */; };
+		36A1F04720E39042002C37E5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03920E39042002C37E5 /* BaseViewController.m */; };
+		36A1F04820E39042002C37E5 /* SCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03A20E39042002C37E5 /* SCustomViewController.m */; };
+		36A1F04920E39042002C37E5 /* SPhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03B20E39042002C37E5 /* SPhoneNumberViewController.m */; };
+		36A1F04A20E39042002C37E5 /* SNumeralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03C20E39042002C37E5 /* SNumeralViewController.m */; };
+		36D7CAB92130008D00E88E67 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03920E39042002C37E5 /* BaseViewController.m */; };
+		36D7CABC2130009000E88E67 /* SCreditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03820E39042002C37E5 /* SCreditCardViewController.m */; };
+		36D7CABD2130009200E88E67 /* SPhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03B20E39042002C37E5 /* SPhoneNumberViewController.m */; };
+		36D7CABE2130009400E88E67 /* SDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03720E39042002C37E5 /* SDateViewController.m */; };
+		36D7CABF2130009600E88E67 /* SCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03A20E39042002C37E5 /* SCustomViewController.m */; };
+		36D7CAC02130009E00E88E67 /* SNumeralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03C20E39042002C37E5 /* SNumeralViewController.m */; };
+		36D7CACF213005DA00E88E67 /* STextFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A1F01A20E38DFF002C37E5 /* STextFormatter.framework */; };
+		36D7CAD0213005DA00E88E67 /* STextFormatter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 36A1F01A20E38DFF002C37E5 /* STextFormatter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36F509E220E47FC900855310 /* STextFormatterDateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F509DE20E47FC800855310 /* STextFormatterDateTest.m */; };
+		36F509E420E47FC900855310 /* STextFormatterCustomTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F509E020E47FC900855310 /* STextFormatterCustomTest.m */; };
+		36F509E520E47FC900855310 /* STextFormatterPhoneNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F509E120E47FC900855310 /* STextFormatterPhoneNumberTest.m */; };
+		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
+		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
+		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
+		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
+		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
+		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
+		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36A1F01920E38DFF002C37E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36A1F01320E38DFF002C37E5 /* STextFormatter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3601B55B200C90960011CCAE;
+			remoteInfo = STextFormatter;
+		};
+		36A1F01B20E38DFF002C37E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36A1F01320E38DFF002C37E5 /* STextFormatter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 36F155D620DD0FC4002436F4;
+			remoteInfo = STextFormatterTests;
+		};
+		36A1F05420E391B9002C37E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6003F589195388D20070C39A;
+			remoteInfo = STextFormatterExample;
+		};
+		36D7CAD1213005DA00E88E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36A1F01320E38DFF002C37E5 /* STextFormatter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3601B55A200C90960011CCAE;
+			remoteInfo = STextFormatter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		36D7CAD3213005DB00E88E67 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				36D7CAD0213005DA00E88E67 /* STextFormatter.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		36A1F01320E38DFF002C37E5 /* STextFormatter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STextFormatter.xcodeproj; path = ../STextFormatter.xcodeproj; sourceTree = "<group>"; };
+		36A1F03120E39041002C37E5 /* SViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SViewController.h; sourceTree = "<group>"; };
+		36A1F03420E39042002C37E5 /* SViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SViewController.m; sourceTree = "<group>"; };
+		36A1F03520E39042002C37E5 /* SAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAppDelegate.m; sourceTree = "<group>"; };
+		36A1F03720E39042002C37E5 /* SDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDateViewController.m; sourceTree = "<group>"; };
+		36A1F03820E39042002C37E5 /* SCreditCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCreditCardViewController.m; sourceTree = "<group>"; };
+		36A1F03920E39042002C37E5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		36A1F03A20E39042002C37E5 /* SCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCustomViewController.m; sourceTree = "<group>"; };
+		36A1F03B20E39042002C37E5 /* SPhoneNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPhoneNumberViewController.m; sourceTree = "<group>"; };
+		36A1F03C20E39042002C37E5 /* SNumeralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNumeralViewController.m; sourceTree = "<group>"; };
+		36A1F03D20E39042002C37E5 /* SDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDateViewController.h; sourceTree = "<group>"; };
+		36A1F03E20E39042002C37E5 /* SCreditCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCreditCardViewController.h; sourceTree = "<group>"; };
+		36A1F03F20E39042002C37E5 /* SPhoneNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPhoneNumberViewController.h; sourceTree = "<group>"; };
+		36A1F04020E39042002C37E5 /* SCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCustomViewController.h; sourceTree = "<group>"; };
+		36A1F04120E39042002C37E5 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		36A1F04220E39042002C37E5 /* SNumeralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNumeralViewController.h; sourceTree = "<group>"; };
+		36A1F04F20E391B9002C37E5 /* STextFormatterExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STextFormatterExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36A1F05320E391B9002C37E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36A1F05920E391D7002C37E5 /* STextFormatterCreditCardTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STextFormatterCreditCardTest.m; sourceTree = "<group>"; };
+		36A1F05B20E391D8002C37E5 /* STextFormatterNumeralTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STextFormatterNumeralTest.m; sourceTree = "<group>"; };
+		36D7CACE2130022300E88E67 /* STextForrmatterHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STextForrmatterHeader.h; sourceTree = "<group>"; };
+		36F509DE20E47FC800855310 /* STextFormatterDateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STextFormatterDateTest.m; sourceTree = "<group>"; };
+		36F509E020E47FC900855310 /* STextFormatterCustomTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STextFormatterCustomTest.m; sourceTree = "<group>"; };
+		36F509E120E47FC900855310 /* STextFormatterPhoneNumberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STextFormatterPhoneNumberTest.m; sourceTree = "<group>"; };
+		6003F58A195388D20070C39A /* STextFormatterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STextFormatterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6003F595195388D20070C39A /* STextFormatterExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "STextFormatterExample-Info.plist"; sourceTree = "<group>"; };
+		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6003F59B195388D20070C39A /* STextFormatterExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STextFormatterExample-Prefix.pch"; sourceTree = "<group>"; };
+		6003F59C195388D20070C39A /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAppDelegate.h; sourceTree = "<group>"; };
+		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36A1F04C20E391B9002C37E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6003F587195388D20070C39A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36D7CACF213005DA00E88E67 /* STextFormatter.framework in Frameworks */,
+				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
+				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
+				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36A1F01420E38DFF002C37E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36A1F01A20E38DFF002C37E5 /* STextFormatter.framework */,
+				36A1F01C20E38DFF002C37E5 /* STextFormatterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36A1F03620E39042002C37E5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				36A1F04120E39042002C37E5 /* BaseViewController.h */,
+				36A1F03920E39042002C37E5 /* BaseViewController.m */,
+				36A1F03E20E39042002C37E5 /* SCreditCardViewController.h */,
+				36A1F03820E39042002C37E5 /* SCreditCardViewController.m */,
+				36A1F03F20E39042002C37E5 /* SPhoneNumberViewController.h */,
+				36A1F03B20E39042002C37E5 /* SPhoneNumberViewController.m */,
+				36A1F03D20E39042002C37E5 /* SDateViewController.h */,
+				36A1F03720E39042002C37E5 /* SDateViewController.m */,
+				36A1F04020E39042002C37E5 /* SCustomViewController.h */,
+				36A1F03A20E39042002C37E5 /* SCustomViewController.m */,
+				36A1F03C20E39042002C37E5 /* SNumeralViewController.m */,
+				36A1F04220E39042002C37E5 /* SNumeralViewController.h */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		36A1F05020E391B9002C37E5 /* STextFormatterExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				36F509E020E47FC900855310 /* STextFormatterCustomTest.m */,
+				36F509DE20E47FC800855310 /* STextFormatterDateTest.m */,
+				36F509E120E47FC900855310 /* STextFormatterPhoneNumberTest.m */,
+				36A1F05920E391D7002C37E5 /* STextFormatterCreditCardTest.m */,
+				36A1F05B20E391D8002C37E5 /* STextFormatterNumeralTest.m */,
+				36A1F05320E391B9002C37E5 /* Info.plist */,
+			);
+			path = STextFormatterExampleTests;
+			sourceTree = "<group>";
+		};
+		6003F581195388D10070C39A = {
+			isa = PBXGroup;
+			children = (
+				36A1F01320E38DFF002C37E5 /* STextFormatter.xcodeproj */,
+				6003F593195388D20070C39A /* STextFormatterExample */,
+				36A1F05020E391B9002C37E5 /* STextFormatterExampleTests */,
+				6003F58C195388D20070C39A /* Frameworks */,
+				6003F58B195388D20070C39A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6003F58B195388D20070C39A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6003F58A195388D20070C39A /* STextFormatterExample.app */,
+				36A1F04F20E391B9002C37E5 /* STextFormatterExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6003F58C195388D20070C39A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6003F58D195388D20070C39A /* Foundation.framework */,
+				6003F58F195388D20070C39A /* CoreGraphics.framework */,
+				6003F591195388D20070C39A /* UIKit.framework */,
+				6003F5AF195388D20070C39A /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6003F593195388D20070C39A /* STextFormatterExample */ = {
+			isa = PBXGroup;
+			children = (
+				36A1F03620E39042002C37E5 /* ViewControllers */,
+				36A1F03520E39042002C37E5 /* SAppDelegate.m */,
+				36A1F03120E39041002C37E5 /* SViewController.h */,
+				36A1F03420E39042002C37E5 /* SViewController.m */,
+				6003F59C195388D20070C39A /* SAppDelegate.h */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+				6003F594195388D20070C39A /* Supporting Files */,
+				36D7CACE2130022300E88E67 /* STextForrmatterHeader.h */,
+			);
+			path = STextFormatterExample;
+			sourceTree = "<group>";
+		};
+		6003F594195388D20070C39A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6003F595195388D20070C39A /* STextFormatterExample-Info.plist */,
+				6003F596195388D20070C39A /* InfoPlist.strings */,
+				6003F599195388D20070C39A /* main.m */,
+				6003F59B195388D20070C39A /* STextFormatterExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36A1F04E20E391B9002C37E5 /* STextFormatterExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36A1F05620E391BA002C37E5 /* Build configuration list for PBXNativeTarget "STextFormatterExampleTests" */;
+			buildPhases = (
+				36A1F04B20E391B9002C37E5 /* Sources */,
+				36A1F04C20E391B9002C37E5 /* Frameworks */,
+				36A1F04D20E391B9002C37E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36A1F05520E391B9002C37E5 /* PBXTargetDependency */,
+			);
+			name = STextFormatterExampleTests;
+			productName = STextFormatterExampleTests;
+			productReference = 36A1F04F20E391B9002C37E5 /* STextFormatterExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6003F589195388D20070C39A /* STextFormatterExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "STextFormatterExample" */;
+			buildPhases = (
+				6003F586195388D20070C39A /* Sources */,
+				6003F587195388D20070C39A /* Frameworks */,
+				6003F588195388D20070C39A /* Resources */,
+				3611B363204EA45B00A015B8 /* ShellScript */,
+				36D7CAD3213005DB00E88E67 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36D7CAD2213005DA00E88E67 /* PBXTargetDependency */,
+			);
+			name = STextFormatterExample;
+			productName = STextFormatterExample;
+			productReference = 6003F58A195388D20070C39A /* STextFormatterExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6003F582195388D10070C39A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = S;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = ZhiweiSun;
+				TargetAttributes = {
+					36A1F04E20E391B9002C37E5 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 6003F589195388D20070C39A;
+					};
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = N26M59Z84Z;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "STextFormatterExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6003F581195388D10070C39A;
+			productRefGroup = 6003F58B195388D20070C39A /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 36A1F01420E38DFF002C37E5 /* Products */;
+					ProjectRef = 36A1F01320E38DFF002C37E5 /* STextFormatter.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				6003F589195388D20070C39A /* STextFormatterExample */,
+				36A1F04E20E391B9002C37E5 /* STextFormatterExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		36A1F01A20E38DFF002C37E5 /* STextFormatter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = STextFormatter.framework;
+			remoteRef = 36A1F01920E38DFF002C37E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36A1F01C20E38DFF002C37E5 /* STextFormatterTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = STextFormatterTests.xctest;
+			remoteRef = 36A1F01B20E38DFF002C37E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36A1F04D20E391B9002C37E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6003F588195388D20070C39A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3611B363204EA45B00A015B8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36A1F04B20E391B9002C37E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36D7CABC2130009000E88E67 /* SCreditCardViewController.m in Sources */,
+				36F509E420E47FC900855310 /* STextFormatterCustomTest.m in Sources */,
+				36D7CABE2130009400E88E67 /* SDateViewController.m in Sources */,
+				36D7CAB92130008D00E88E67 /* BaseViewController.m in Sources */,
+				36D7CAC02130009E00E88E67 /* SNumeralViewController.m in Sources */,
+				36F509E220E47FC900855310 /* STextFormatterDateTest.m in Sources */,
+				36D7CABD2130009200E88E67 /* SPhoneNumberViewController.m in Sources */,
+				36F509E520E47FC900855310 /* STextFormatterPhoneNumberTest.m in Sources */,
+				36D7CABF2130009600E88E67 /* SCustomViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6003F586195388D20070C39A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36A1F04520E39042002C37E5 /* SDateViewController.m in Sources */,
+				36A1F04720E39042002C37E5 /* BaseViewController.m in Sources */,
+				36A1F04920E39042002C37E5 /* SPhoneNumberViewController.m in Sources */,
+				36A1F04420E39042002C37E5 /* SAppDelegate.m in Sources */,
+				36A1F04320E39042002C37E5 /* SViewController.m in Sources */,
+				6003F59A195388D20070C39A /* main.m in Sources */,
+				36A1F04820E39042002C37E5 /* SCustomViewController.m in Sources */,
+				36A1F04A20E39042002C37E5 /* SNumeralViewController.m in Sources */,
+				36A1F04620E39042002C37E5 /* SCreditCardViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36A1F05520E391B9002C37E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6003F589195388D20070C39A /* STextFormatterExample */;
+			targetProxy = 36A1F05420E391B9002C37E5 /* PBXContainerItemProxy */;
+		};
+		36D7CAD2213005DA00E88E67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = STextFormatter;
+			targetProxy = 36D7CAD1213005DA00E88E67 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6003F596195388D20070C39A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6003F597195388D20070C39A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71719F9E1E33DC2100824A3D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36A1F05720E391BA002C37E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = N26M59Z84Z;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = STextFormatterExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = com.szwathub.STextFormatterExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STextFormatterExample.app/STextFormatterExample";
+			};
+			name = Debug;
+		};
+		36A1F05820E391BA002C37E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = N26M59Z84Z;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = STextFormatterExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.szwathub.STextFormatterExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STextFormatterExample.app/STextFormatterExample";
+			};
+			name = Release;
+		};
+		6003F5BD195388D20070C39A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_STextFormatterExample_VERSION = 0;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		6003F5BE195388D20070C39A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_STextFormatterExample_VERSION = 0;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		6003F5C0195388D20070C39A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = N26M59Z84Z;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "STextFormatterExample/STextFormatterExample-Prefix.pch";
+				INFOPLIST_FILE = "STextFormatterExample/STextFormatterExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyrex.demo.STextFormatterExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5619c084-da5a-41c4-9c22-68072107344b";
+				PROVISIONING_PROFILE_SPECIFIER = "com.cyrex.demo.*";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6003F5C1195388D20070C39A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = N26M59Z84Z;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "STextFormatterExample/STextFormatterExample-Prefix.pch";
+				INFOPLIST_FILE = "STextFormatterExample/STextFormatterExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyrex.demo.STextFormatterExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5619c084-da5a-41c4-9c22-68072107344b";
+				PROVISIONING_PROFILE_SPECIFIER = "com.cyrex.demo.*";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36A1F05620E391BA002C37E5 /* Build configuration list for PBXNativeTarget "STextFormatterExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36A1F05720E391BA002C37E5 /* Debug */,
+				36A1F05820E391BA002C37E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6003F585195388D10070C39A /* Build configuration list for PBXProject "STextFormatterExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6003F5BD195388D20070C39A /* Debug */,
+				6003F5BE195388D20070C39A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "STextFormatterExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6003F5C0195388D20070C39A /* Debug */,
+				6003F5C1195388D20070C39A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6003F582195388D10070C39A /* Project object */;
+}

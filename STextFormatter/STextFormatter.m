@@ -40,7 +40,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
 
 @end
 
-@implementation STextFormatter 
+@implementation STextFormatter
 #pragma mark - Life Cycle
 - (instancetype)initWithTextField:(UITextField *)textField {
     if (self = [super init]) {
@@ -51,7 +51,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
         _limitedLength          = INT8_MAX;
         [_field addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventAllEditingEvents];
     }
-    
+
     return self;
 }
 
@@ -129,20 +129,20 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     } else if (SCreditCardPre(MasterCard, string)) {
         return SCreditCardTypeMasterCard;
     }
-    
+
     return SCreditCardTypeNone;
 }
 
 - (void)valueChanged:(NSNotification *)notic {
     NSString *noDelimiterStr = [_field.text stringByReplacingOccurrencesOfString:self.delimiter withString:@""];
-    
+
     if (STextFormatterCategoryCreditCard == _category) {
         BOOL creditCardTypeChanged = NO;
         if (_creditCardType != [self creditCardTypeJudge:noDelimiterStr]) {
             creditCardTypeChanged = YES;
             _creditCardType = [self creditCardTypeJudge:noDelimiterStr];
         }
-        
+
         if (creditCardTypeChanged && [_creditCardDelegate respondsToSelector:@selector(onCreditCardTypeChanged:)]) {
             [_creditCardDelegate onCreditCardTypeChanged:_creditCardType];
         }
@@ -151,7 +151,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
 //        _preLen = _field.text.length;
 //        return ;
 //    }
-    
+
     switch (_category) {
         case STextFormatterCategoryCreditCard: {
             NSString *tmp = [noDelimiterStr splitStringWithBlocks:self.blocks delimiter:self.delimiter andPrefix:nil];
@@ -177,7 +177,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
         case STextFormatterCategoryNone:
             break;
     }
-    
+
     _preLen = _field.text.length;
 }
 
@@ -186,20 +186,20 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     if (STextFormatterCategoryNumeral == _category) {
         return string.length <= self.limitedLength ? YES : NO;
     }
-    
+
     if (nil == self.blocks) {
         return YES;
     }
-    
+
     NSInteger count = self.blocks.count - 1;
     for (NSNumber *index in self.blocks) {
         count += index.integerValue;
     }
-    
+
     if (string.length <= count) {
         return YES;
     }
-    
+
     return NO;
 }
 
@@ -238,7 +238,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
                 return _delimiter;
             }
     }
-    
+
     return @"";
 }
 

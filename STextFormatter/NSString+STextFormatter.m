@@ -26,7 +26,7 @@
             *stop = YES;
         }
     }];
-    
+
     return [result copy];
 }
 
@@ -78,7 +78,7 @@
             result = (NSMutableString *)[result stringByAppendingString:[NSString stringWithFormat:@"%@/", _year]];
         }
     }
-    
+
     if ([_month isEqualToString:@"00"]) {
         result = (NSMutableString *)[result stringByAppendingString:@"01/"];
     } else if (1 == _month.length && [_month intValue] > 1) {
@@ -121,7 +121,7 @@
     if (2 == month && [self isIntercalaryYear:year]) {
         return 29;
     }
-    
+
     NSInteger index = 1;
     if (month >= 1 && month <= 12) {
         index = month;

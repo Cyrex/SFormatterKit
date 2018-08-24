@@ -7,10 +7,6 @@
 [![License](https://img.shields.io/cocoapods/l/STextFormatter.svg?style=flat)](http://cocoapods.org/pods/STextFormatter)
 [![Platform](https://img.shields.io/cocoapods/p/STextFormatter.svg?style=flat)](http://cocoapods.org/pods/STextFormatter)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Requirements
 
 ## Installation

@@ -31,7 +31,7 @@ A simple library for formatting your input content when you are typing.
   s.ios.deployment_target = '8.0'
 
   s.public_header_files = 'STextFormatter/*.h'
-  s.source_files = 'STextFormatter/*'
+  s.source_files = 'STextFormatter/*.{h,m}'
 
   # s.resource_bundles = {
   #   'STextFormatter' => ['STextFormatter/Assets/*.png']
