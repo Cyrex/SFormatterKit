@@ -38,8 +38,41 @@
     }
 }
 
-- (void)handleTextChanged:(NSNotification *)notification {
+- (BOOL)isFormatting {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
 
+- (void)setIsFormatting:(BOOL)isFormatting {
+    objc_setAssociatedObject(self,
+                             @selector(isFormatting),
+                             @(isFormatting),
+                             OBJC_ASSOCIATION_RETAIN);
+}
+
+
+#pragma mark - PUblic Methods
+-(void)formatCurrentText {
+    if (!self.textFormatter) {
+        return ;
+    }
+
+    [self handleTextChanged:nil];
+}
+
+
+#pragma mark - Notifications
+- (void)handleTextChanged:(NSNotification *)notification {
+    // check for recursion
+    if (self.isFormatting) {
+        return ;
+    }
+    self.isFormatting = YES;
+
+    // format text string
+    NSString *newString = [self.textFormatter formatString:self.text];
+    self.text = newString;
+
+    self.isFormatting = NO;
 }
 
 @end

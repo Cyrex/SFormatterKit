@@ -19,4 +19,8 @@
 
 @property (nonatomic, strong) STextFormatter *textFormatter;
 
+@property (nonatomic, assign) BOOL isFormatting;
+
+-(void)formatCurrentText;
+
 @end

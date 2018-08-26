@@ -28,7 +28,7 @@
 		36D7CACA213000B000E88E67 /* STextFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D7CAC3213000B000E88E67 /* STextFormatter.m */; };
 		36D7CACB213000B000E88E67 /* NSString+STextFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D7CAC4213000B000E88E67 /* NSString+STextFormatter.m */; };
 		36D7CACC213000B000E88E67 /* NSString+STextFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D7CAC4213000B000E88E67 /* NSString+STextFormatter.m */; };
-		36D7CACD213000B000E88E67 /* UITextField+STextFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 36D7CAC5213000B000E88E67 /* UITextField+STextFormatter.h */; };
+		36D7CACD213000B000E88E67 /* UITextField+STextFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 36D7CAC5213000B000E88E67 /* UITextField+STextFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36F155D020DD0FAB002436F4 /* STextFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 36F155CE20DD0FAB002436F4 /* STextFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36F155D920DD0FC5002436F4 /* STextFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F155D820DD0FC5002436F4 /* STextFormatterTests.m */; };
 		36F155DB20DD0FC5002436F4 /* STextFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601B55B200C90960011CCAE /* STextFormatter.framework */; };
@@ -140,8 +140,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				36D7CAC8213000B000E88E67 /* NSString+STextFormatter.h in Headers */,
-				36F155D020DD0FAB002436F4 /* STextFormatter.h in Headers */,
 				36D7CACD213000B000E88E67 /* UITextField+STextFormatter.h in Headers */,
+				36F155D020DD0FAB002436F4 /* STextFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

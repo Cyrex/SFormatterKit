@@ -13,6 +13,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "UITextField+STextFormatter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -45,21 +46,15 @@ typedef NS_ENUM(NSUInteger, SNumeralGroupStyle) {
     SNumeralGroupStyleWan
 };
 
+typedef NS_ENUM(NSUInteger, SCustomStringCase) {
+    SCustomStringTypeCaseNone = 10000,
+    SCustomStringTypeCaseUpper,
+    SCustomStringTypeCaseLower
+};
+
 @protocol CreditCardDelegate <NSObject>
 @optional
 - (void)onCreditCardTypeChanged:(SCreditCardType)type;
-
-@end
-
-
-@protocol TextFiledFormatterDelegate <NSObject>
-@optional
-- (BOOL)s_textFieldShouldBeginEditing:(UITextField *)textField;
-- (void)s_textFieldDidBeginEditing:(UITextField *)textField;
-- (BOOL)s_textFieldShouldEndEditing:(UITextField *)textField;
-- (void)s_textFieldDidEndEditing:(UITextField *)textField;
-- (BOOL)s_textFieldShouldClear:(UITextField *)textField;
-- (BOOL)s_textFieldShouldReturn:(UITextField *)textField;
 
 @end
 
@@ -120,21 +115,15 @@ typedef NS_ENUM(NSUInteger, SNumeralGroupStyle) {
 
 /**
  *  Only useful in STextFormatterCategoryCustom.
- *  default is NO.
- *  It has a higher priority than needLowercase.
+ *  default is SCustomStringTypeCaseNone
  */
-@property (nonatomic, assign) BOOL                              needUppercase;
-
-/**
- *  Only useful in STextFormatterCategoryCustom.
- *  default is NO.
- */
-@property (nonatomic, assign) BOOL                              needLowercase;
+@property (nonatomic, assign) SCustomStringCase                 stringCase;
 
 @property (nullable, nonatomic, weak) id<CreditCardDelegate>         creditCardDelegate;
-@property (nullable, nonatomic, weak) id<TextFiledFormatterDelegate> delegate;
 
 - (nullable instancetype)initWithTextField:(UITextField *)textField;
+
+- (NSString *)formatString:(NSString *)string;
 
 @end
 

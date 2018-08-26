@@ -14,7 +14,7 @@
 #import "SCreditCardViewController.h"
 #import <STextFormatter/STextFormatter.h>
 
-@interface SCreditCardViewController () <CreditCardDelegate, TextFiledFormatterDelegate>
+@interface SCreditCardViewController () <CreditCardDelegate>
 
 @property (nonatomic, strong) UIImageView *creditCardImage;
 
@@ -28,7 +28,8 @@
 
         self.formatter.category = STextFormatterCategoryCreditCard;
         self.formatter.creditCardDelegate = self;
-        self.formatter.delegate  = self;
+
+        self.baseField.textFormatter = self.formatter;
     }
 
     return self;

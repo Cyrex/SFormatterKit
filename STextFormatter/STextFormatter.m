@@ -47,12 +47,61 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
         textField.delegate  = self;
         self.shouldDeleteSuffix = NO;
         self.deleteString       = @"";
+        self.stringCase         = SCustomStringTypeCaseNone;
         _field                  = textField;
         _limitedLength          = INT8_MAX;
-        [_field addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventAllEditingEvents];
     }
 
     return self;
+}
+
+
+#pragma mark - Public Methods
+- (NSString *)formatString:(NSString *)string {
+    NSString *noDelimiterStr = [string stringByReplacingOccurrencesOfString:self.delimiter withString:@""];
+
+    if (STextFormatterCategoryCreditCard == self.category) {
+        BOOL creditCardTypeChanged = NO;
+        if ([self creditCardTypeJudge:noDelimiterStr] != self.creditCardType) {
+            creditCardTypeChanged = YES;
+            self.creditCardType = [self creditCardTypeJudge:noDelimiterStr];
+        }
+
+        if (creditCardTypeChanged && [self.creditCardDelegate respondsToSelector:@selector(onCreditCardTypeChanged:)]) {
+            [self.creditCardDelegate onCreditCardTypeChanged:self.creditCardType];
+        }
+    }
+
+    NSString *newString = nil;
+    switch (self.category) {
+        case STextFormatterCategoryCreditCard: {
+            NSString *tmp = [noDelimiterStr splitStringWithBlocks:self.blocks delimiter:self.delimiter andPrefix:nil];
+            if ([tmp hasSuffix:self.delimiter] && self.shouldDeleteSuffix) {
+                newString = [tmp substringToIndex:tmp.length - 1];
+            } else {
+                newString = tmp;
+            }
+        }
+            break;
+        case STextFormatterCategoryDate: {
+            NSString *tmp = [_field.text formatterDateWithPattern:self.dateFormatPattern andDelimiter:self.delimiter];
+            if ([self.deleteString isEqualToString:self.delimiter] && self.shouldDeleteSuffix) {
+                newString = [tmp substringToIndex:tmp.length - 2];
+            } else {
+                newString = tmp;
+            }
+        }
+            break;
+        case STextFormatterCategoryPhoneNumber:
+        case STextFormatterCategoryNumeral:
+        case STextFormatterCategoryCustom:
+        case STextFormatterCategoryNone:
+            break;
+    }
+
+    self.preLen = newString.length;
+
+    return newString;
 }
 
 
@@ -67,50 +116,6 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     }
 
     return NO;
-}
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if ([_delegate respondsToSelector:@selector(s_textFieldShouldBeginEditing:)]) {
-        return [_delegate s_textFieldShouldClear:textField];
-    }
-
-    return YES;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    if ([_delegate respondsToSelector:@selector(s_textFieldDidBeginEditing:)]) {
-        [_delegate s_textFieldDidBeginEditing:textField];
-    }
-}
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    if ([_delegate respondsToSelector:@selector(s_textFieldShouldEndEditing:)]) {
-        return [_delegate s_textFieldShouldEndEditing:textField];
-    }
-
-    return YES;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    if ([_delegate respondsToSelector:@selector(s_textFieldDidEndEditing:)]) {
-        [_delegate s_textFieldDidEndEditing:textField];
-    }
-}
-
-- (BOOL)textFieldShouldClear:(UITextField *)textField {
-    if ([_delegate respondsToSelector:@selector(s_textFieldShouldClear:)]) {
-        return [_delegate s_textFieldShouldClear:textField];
-    }
-
-    return YES;
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if ([_delegate respondsToSelector:@selector(s_textFieldShouldReturn:)]) {
-        return [_delegate s_textFieldShouldReturn:textField];
-    }
-
-    return YES;
 }
 
 
@@ -133,55 +138,6 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     return SCreditCardTypeNone;
 }
 
-- (void)valueChanged:(NSNotification *)notic {
-    NSString *noDelimiterStr = [_field.text stringByReplacingOccurrencesOfString:self.delimiter withString:@""];
-
-    if (STextFormatterCategoryCreditCard == _category) {
-        BOOL creditCardTypeChanged = NO;
-        if (_creditCardType != [self creditCardTypeJudge:noDelimiterStr]) {
-            creditCardTypeChanged = YES;
-            _creditCardType = [self creditCardTypeJudge:noDelimiterStr];
-        }
-
-        if (creditCardTypeChanged && [_creditCardDelegate respondsToSelector:@selector(onCreditCardTypeChanged:)]) {
-            [_creditCardDelegate onCreditCardTypeChanged:_creditCardType];
-        }
-    }
-//    if (_preLen > _field.text.length) {
-//        _preLen = _field.text.length;
-//        return ;
-//    }
-
-    switch (_category) {
-        case STextFormatterCategoryCreditCard: {
-            NSString *tmp = [noDelimiterStr splitStringWithBlocks:self.blocks delimiter:self.delimiter andPrefix:nil];
-            if ([tmp hasSuffix:self.delimiter] && self.shouldDeleteSuffix) {
-                _field.text = [tmp substringToIndex:tmp.length - 1];
-            } else {
-                _field.text = tmp;
-            }
-        }
-            break;
-        case STextFormatterCategoryDate: {
-            NSString *tmp = [_field.text formatterDateWithPattern:self.dateFormatPattern andDelimiter:self.delimiter];
-            if ([self.deleteString isEqualToString:self.delimiter] && self.shouldDeleteSuffix) {
-                _field.text = [tmp substringToIndex:tmp.length - 2];
-            } else {
-                _field.text = tmp;
-            }
-        }
-            break;
-        case STextFormatterCategoryPhoneNumber:
-        case STextFormatterCategoryNumeral:
-        case STextFormatterCategoryCustom:
-        case STextFormatterCategoryNone:
-            break;
-    }
-
-    _preLen = _field.text.length;
-}
-
-
 - (BOOL)canEdit:(NSString *)string {
     if (STextFormatterCategoryNumeral == _category) {
         return string.length <= self.limitedLength ? YES : NO;
@@ -201,24 +157,6 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
     }
 
     return NO;
-}
-
-
-#pragma mark - Setters
-- (void)setCategory:(STextFormatterCategory)category {
-    _category = category;
-    switch (category) {
-        case STextFormatterCategoryPhoneNumber:
-        case STextFormatterCategoryCreditCard:
-        case STextFormatterCategoryNumeral:
-        case STextFormatterCategoryDate:
-            _field.keyboardType = UIKeyboardTypeNumberPad;
-            break;
-        case STextFormatterCategoryCustom:
-        case STextFormatterCategoryNone:
-        default:
-            break;
-    }
 }
 
 

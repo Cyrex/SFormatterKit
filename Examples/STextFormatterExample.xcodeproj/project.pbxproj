@@ -15,14 +15,10 @@
 		36A1F04820E39042002C37E5 /* SCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03A20E39042002C37E5 /* SCustomViewController.m */; };
 		36A1F04920E39042002C37E5 /* SPhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03B20E39042002C37E5 /* SPhoneNumberViewController.m */; };
 		36A1F04A20E39042002C37E5 /* SNumeralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03C20E39042002C37E5 /* SNumeralViewController.m */; };
-		36D7CAB92130008D00E88E67 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03920E39042002C37E5 /* BaseViewController.m */; };
-		36D7CABC2130009000E88E67 /* SCreditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03820E39042002C37E5 /* SCreditCardViewController.m */; };
-		36D7CABD2130009200E88E67 /* SPhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03B20E39042002C37E5 /* SPhoneNumberViewController.m */; };
-		36D7CABE2130009400E88E67 /* SDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03720E39042002C37E5 /* SDateViewController.m */; };
-		36D7CABF2130009600E88E67 /* SCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03A20E39042002C37E5 /* SCustomViewController.m */; };
-		36D7CAC02130009E00E88E67 /* SNumeralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F03C20E39042002C37E5 /* SNumeralViewController.m */; };
 		36D7CACF213005DA00E88E67 /* STextFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A1F01A20E38DFF002C37E5 /* STextFormatter.framework */; };
 		36D7CAD0213005DA00E88E67 /* STextFormatter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 36A1F01A20E38DFF002C37E5 /* STextFormatter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36D7CAD52130154000E88E67 /* STextFormatterCreditCardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F05920E391D7002C37E5 /* STextFormatterCreditCardTest.m */; };
+		36D7CAD62130154300E88E67 /* STextFormatterNumeralTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A1F05B20E391D8002C37E5 /* STextFormatterNumeralTest.m */; };
 		36F509E220E47FC900855310 /* STextFormatterDateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F509DE20E47FC800855310 /* STextFormatterDateTest.m */; };
 		36F509E420E47FC900855310 /* STextFormatterCustomTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F509E020E47FC900855310 /* STextFormatterCustomTest.m */; };
 		36F509E520E47FC900855310 /* STextFormatterPhoneNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F509E120E47FC900855310 /* STextFormatterPhoneNumberTest.m */; };
@@ -165,8 +161,8 @@
 				36A1F03720E39042002C37E5 /* SDateViewController.m */,
 				36A1F04020E39042002C37E5 /* SCustomViewController.h */,
 				36A1F03A20E39042002C37E5 /* SCustomViewController.m */,
-				36A1F03C20E39042002C37E5 /* SNumeralViewController.m */,
 				36A1F04220E39042002C37E5 /* SNumeralViewController.h */,
+				36A1F03C20E39042002C37E5 /* SNumeralViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -389,15 +385,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36D7CABC2130009000E88E67 /* SCreditCardViewController.m in Sources */,
 				36F509E420E47FC900855310 /* STextFormatterCustomTest.m in Sources */,
-				36D7CABE2130009400E88E67 /* SDateViewController.m in Sources */,
-				36D7CAB92130008D00E88E67 /* BaseViewController.m in Sources */,
-				36D7CAC02130009E00E88E67 /* SNumeralViewController.m in Sources */,
 				36F509E220E47FC900855310 /* STextFormatterDateTest.m in Sources */,
-				36D7CABD2130009200E88E67 /* SPhoneNumberViewController.m in Sources */,
+				36D7CAD52130154000E88E67 /* STextFormatterCreditCardTest.m in Sources */,
+				36D7CAD62130154300E88E67 /* STextFormatterNumeralTest.m in Sources */,
 				36F509E520E47FC900855310 /* STextFormatterPhoneNumberTest.m in Sources */,
-				36D7CABF2130009600E88E67 /* SCustomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
