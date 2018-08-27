@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 REMOTE_BRANCH=master
-PROJECT_NAME=STextFormatter
-POD_SPEC=STextFormatter.podspec
+PROJECT_NAME=SFormatterKit
+POD_SPEC=SFormatterKit.podspec
 
 POD=${COCOAPODS:-pod}
