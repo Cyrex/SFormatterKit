@@ -36,13 +36,13 @@
 		361D9CEA2133EF7F006272E6 /* SCreditCardFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 361D9CE82133EF7F006272E6 /* SCreditCardFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		361D9CEB2133EF7F006272E6 /* SCreditCardFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 361D9CE92133EF7F006272E6 /* SCreditCardFormatter.m */; };
 		361D9CEC2133EF7F006272E6 /* SCreditCardFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 361D9CE92133EF7F006272E6 /* SCreditCardFormatter.m */; };
-		361D9CEF2133F7CE006272E6 /* SPhoneNumberFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 361D9CED2133F7CE006272E6 /* SPhoneNumberFormatter.h */; };
+		361D9CEF2133F7CE006272E6 /* SPhoneNumberFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 361D9CED2133F7CE006272E6 /* SPhoneNumberFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		361D9CF02133F7CE006272E6 /* SPhoneNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 361D9CEE2133F7CE006272E6 /* SPhoneNumberFormatter.m */; };
 		361D9CF12133F7CE006272E6 /* SPhoneNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 361D9CEE2133F7CE006272E6 /* SPhoneNumberFormatter.m */; };
-		361D9CF42133F922006272E6 /* SCustomFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 361D9CF22133F922006272E6 /* SCustomFormatter.h */; };
+		361D9CF42133F922006272E6 /* SCustomFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 361D9CF22133F922006272E6 /* SCustomFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		361D9CF52133F922006272E6 /* SCustomFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 361D9CF32133F922006272E6 /* SCustomFormatter.m */; };
 		361D9CF62133F922006272E6 /* SCustomFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 361D9CF32133F922006272E6 /* SCustomFormatter.m */; };
-		361D9CF92133FB98006272E6 /* SNumeralFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 361D9CF72133FB98006272E6 /* SNumeralFormatter.h */; };
+		361D9CF92133FB98006272E6 /* SNumeralFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 361D9CF72133FB98006272E6 /* SNumeralFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		361D9CFA2133FB98006272E6 /* SNumeralFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 361D9CF82133FB98006272E6 /* SNumeralFormatter.m */; };
 		361D9CFB2133FB98006272E6 /* SNumeralFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 361D9CF82133FB98006272E6 /* SNumeralFormatter.m */; };
 		36F155D020DD0FAB002436F4 /* SFormatterKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 36F155CE20DD0FAB002436F4 /* SFormatterKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -177,15 +177,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F155D020DD0FAB002436F4 /* SFormatterKit.h in Headers */,
 				361D9CEA2133EF7F006272E6 /* SCreditCardFormatter.h in Headers */,
 				361D9CD62133E050006272E6 /* SNormalFormatter.h in Headers */,
-				361D9CF42133F922006272E6 /* SCustomFormatter.h in Headers */,
 				361D9CE52133ECE0006272E6 /* SDateFormatter.h in Headers */,
+				361D9CF42133F922006272E6 /* SCustomFormatter.h in Headers */,
 				361D9CF92133FB98006272E6 /* SNumeralFormatter.h in Headers */,
 				361D9CDB2133E195006272E6 /* UITextField+SFormatterKit.h in Headers */,
-				36F155D020DD0FAB002436F4 /* SFormatterKit.h in Headers */,
-				361D9CE02133E1BF006272E6 /* NSString+SFormatterKit.h in Headers */,
 				361D9CEF2133F7CE006272E6 /* SPhoneNumberFormatter.h in Headers */,
+				361D9CE02133E1BF006272E6 /* NSString+SFormatterKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

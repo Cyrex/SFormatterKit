@@ -49,7 +49,7 @@ typedef NS_ENUM(NSUInteger, SFormatterType) {
 /**
  *  Only useful in SFormatterTypeCustom, it will not work if set value in other type.
  *  @example if you set this is @[@".", @".", @"-"], the UITextField's text will be @"X.XX.XXX-XXXX"
- *  careful _delimiters.count = blocks.count - 1. if not, will use delimiter.
+ *  careful _delimiters.count should be equal to blocks.count - 1. if not, will use delimiter.
  *
  *  It has a higher priority than delimiter.
  */
@@ -65,7 +65,7 @@ typedef NS_ENUM(NSUInteger, SFormatterType) {
  */
 @property (nullable, nonatomic, copy) NSString *delimiter;
 
-@property (nonatomic, assign, readonly) BOOL shouldDeleteSuffix;
+@property (nonatomic, assign, readonly) BOOL removeSuffix;
 
 - (NSString *)formatString:(NSString *)string;
 

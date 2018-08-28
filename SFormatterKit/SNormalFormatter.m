@@ -15,7 +15,7 @@
 
 @interface SNormalFormatter ()
 
-@property (nonatomic, assign, readwrite) BOOL shouldDeleteSuffix;
+@property (nonatomic, assign, readwrite) BOOL removeSuffix;
 
 @end
 

@@ -16,12 +16,17 @@
 
 @interface SFViewController ()
 
+@property (nonatomic, strong) UITextField *field;
+
 @end
 
 @implementation SFViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    SCreditCardFormatter *formatter = [[SCreditCardFormatter alloc] init];
+
+    self.field.textFormatter = formatter;
 }
 
 @end

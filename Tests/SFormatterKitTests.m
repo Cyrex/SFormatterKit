@@ -30,99 +30,111 @@
     [super tearDown];
 }
 
+#pragma mark - Test
 - (void)testSplitStringUsingBlocks {
-    NSString *result = [@"1234123412341234" splitStringWithBlocks:@[@4, @4, @4, @4] andDelimiter:@" "];
-    XCTAssertTrue([result isEqualToString:@"1234 1234 1234 1234"],
-                  @"can't split string with blocks");
+    NSString *testString = [@"1234123412341234" splitStringWithBlocks:@[@4, @4, @4, @4] andDelimiter:@" "];
+    XCTAssert([testString isEqualToString:@"1234 1234 1234 1234"],
+              @"NSString+SFormatterKit can't split string using blocks");
 
-    result = [@"123412341234123" splitStringWithBlocks:@[@4, @4, @4, @4] andDelimiter:@" "];
-    XCTAssertTrue([result isEqualToString:@"1234 1234 1234 123"],
-                  @"can't split string with blocks");
+    testString = [@"123412341234123" splitStringWithBlocks:@[@4, @4, @4, @4] andDelimiter:@" "];
+    XCTAssert([testString isEqualToString:@"1234 1234 1234 123"],
+              @"NSString+SFormatterKit can't split string using blocks");
 
-    result = [@"123412341234" splitStringWithBlocks:@[@4, @4, @4, @4] andDelimiter:@" "];
-    XCTAssertTrue([result isEqualToString:@"1234 1234 1234 "],
-                  @"can't split string with blocks");
+    testString = [@"123412341234" splitStringWithBlocks:@[@4, @4, @4, @4] andDelimiter:@" "];
+    XCTAssert([testString isEqualToString:@"1234 1234 1234 "],
+              @"NSString+SFormatterKit can't split string using blocks");
 
-    result = [@"12341234123" splitStringWithBlocks:@[@4, @4, @4, @4] andDelimiter:@" "];
-    XCTAssertTrue([result isEqualToString:@"1234 1234 123"],
-                  @"can't split string with blocks");
+    testString = [@"12341234123" splitStringWithBlocks:@[@4, @4, @4, @4] andDelimiter:@" "];
+    XCTAssert([testString isEqualToString:@"1234 1234 123"],
+              @"NSString+SFormatterKit can't split string using blocks");
 
-    result = [@"1222222333" splitStringWithBlocks:@[@1, @6, @3, @4] andDelimiter:@" "];
-    XCTAssertTrue([result isEqualToString:@"1 222222 333 "],
-                  @"can't split string with blocks");
+    testString = [@"1222222333" splitStringWithBlocks:@[@1, @6, @3, @4] andDelimiter:@" "];
+    XCTAssert([testString isEqualToString:@"1 222222 333 "],
+              @"NSString+SFormatterKit can't split string using blocks");
 }
 
 - (void)testSplitStringWithPrefixUsingBlocks {
-    NSString *result = [@"1234123412341234" splitStringWithBlocks:@[@4, @4, @4, @4]
-                                                        delimiter:@" "
-                                                        andPrefix:@"S"];
-    XCTAssertTrue([result isEqualToString:@"S1234 1234 1234 1234"],
-                  @"can't split string with prefix using blocks");
+    NSString *testString = [@"1234123412341234" splitStringWithBlocks:@[@4, @4, @4, @4] delimiter:@" " andPrefix:@"S"];
+    XCTAssert([testString isEqualToString:@"S1234 1234 1234 1234"],
+              @"NSString+SFormatterKit can't split string with prefix using blocks");
 
-    result = [@"1234123412341234" splitStringWithBlocks:@[@4, @4, @4, @4]
-                                              delimiter:@" "
-                                              andPrefix:nil];
-    XCTAssertTrue([result isEqualToString:@"1234 1234 1234 1234"],
-                  @"can't split string with prefix using blocks");
+    testString = [@"1234123412341234" splitStringWithBlocks:@[@4, @4, @4, @4] delimiter:@" " andPrefix:nil];
+    XCTAssert([testString isEqualToString:@"1234 1234 1234 1234"],
+              @"NSString+SFormatterKit can't split string with prefix using blocks");
 }
 
 - (void)testCheckDateString {
-    NSString *result = [@"1995" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"1995/"],
-                  @"can't check date string");
+    NSString *testString = [@"1995" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"1995/"],
+              @"NSString+SFormatterKit can't check date string");
 
-    result = [@"199" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"199"],
-                  @"can't check date string");
-    result = [@"1995/3" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"1995/03/"],
-                  @"can't check date string");
-    result = [@"1995/00" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"1995/01/"],
-                  @"can't check date string");
-    result = [@"1995/13" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"1995/12/"],
-                  @"can't check date string");
-    result = [@"1995/1" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"1995/1"],
-                  @"can't check date string");
-    result = [@"1995/12/5" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"1995/12/05"],
-                  @"can't check date string");
-    result = [@"1995/12/2" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"1995/12/2"],
-                  @"can't check date string");
-    result = [@"1995/02/29" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"1995/02/28"],
-                  @"can't check date string");
-    result = [@"2000/02/29" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"2000/02/29"],
-                  @"can't check date string");
+    testString = [@"199" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"199"],
+              @"NSString+SFormatterKit can't check date string");
 
-    result = [@"5" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"05/"],
-                  @"can't check date string");
-    result = [@"1" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"1"],
-                  @"can't check date string");
-    result = [@"12" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"12/"],
-                  @"can't check date string");
-    result = [@"13" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"12/"],
-                  @"can't check date string");
-    result = [@"01/9" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"01/09"],
-                  @"can't check date string");
-    result = [@"00" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"01/"],
-                  @"can't check date string");
-    result = [@"02/00" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"02/01"],
-                  @"can't check date string");
-    result = [@"02/29" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
-    XCTAssertTrue([result isEqualToString:@"02/29"],
-                  @"can't check date string");
+    testString = [@"1995/3" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"1995/03/"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"1995/00" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"1995/01/"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"1995/13" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"1995/12/"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"1995/1" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"1995/1"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"1995/12/5" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"1995/12/05"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"1995/12/2" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"1995/12/2"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"1995/02/29" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"1995/02/28"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"2000/02/29" formatterDateWithPattern:SDateFormatPatternYMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"2000/02/29"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"5" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"05/"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"1" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"1"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"12" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"12/"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"13" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"12/"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"01/9" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"01/09"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"00" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"01/"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"02/00" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"02/01"],
+              @"NSString+SFormatterKit can't check date strin");
+
+    testString = [@"02/29" formatterDateWithPattern:SDateFormatPatternMD andDelimiter:@"/"];
+    XCTAssert([testString isEqualToString:@"02/29"],
+              @"NSString+SFormatterKit can't check date strin");
 }
 
 - (void)testPerformanceExample {

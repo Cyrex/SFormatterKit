@@ -24,10 +24,16 @@ FOUNDATION_EXPORT const unsigned char SFormatterKitVersionString[];
     #import <SFormatterKit/UITextField+SFormatterKit.h>
     #import <SFormatterKit/SNormalFormatter.h>
     #import <SFormatterKit/SCreditCardFormatter.h>
+    #import <SFormatterKit/SPhoneNumberFormatter.h>
     #import <SFormatterKit/SDateFormatter.h>
+    #import <SFormatterKit/SNumeralFormatter.h>
+    #import <SFormatterKit/SCustomFormatter.h>
 #else
     #import "UITextField+SFormatterKit.h"
     #import "SNormalFormatter.h"
     #import "SCreditCardFormatter.h"
+    #import "SPhoneNumberFormatter.h"
     #import "SDateFormatter.h"
+    #import "SNumeralFormatter.h"
+    #import "SCustomFormatter.h"
 #endif

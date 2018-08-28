@@ -65,7 +65,7 @@ NSString *const SMasterCardReg = @"^(5[1-5]|2[2-7])\\d{0,14}";
 
     NSString *newString = nil;
     NSString *tmp = [string splitStringWithBlocks:self.blocks delimiter:self.delimiter andPrefix:nil];
-    if ([tmp hasSuffix:self.delimiter] && self.shouldDeleteSuffix) {
+    if ([tmp hasSuffix:self.delimiter] && self.removeSuffix) {
         newString = [tmp substringToIndex:tmp.length - 1];
     } else {
         newString = tmp;
