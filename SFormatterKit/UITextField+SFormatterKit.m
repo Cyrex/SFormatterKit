@@ -68,6 +68,18 @@
     }
     self.isFormatting = YES;
 
+    // Saving caret position
+    NSUInteger caretHeadOffset = (NSUInteger)[self offsetFromPosition:self.beginningOfDocument
+                                                           toPosition:self.selectedTextRange.start];
+    NSUInteger caretTailOffset = (NSUInteger)[self offsetFromPosition:self.selectedTextRange.end
+                                                           toPosition:self.endOfDocument];
+    NSUInteger offsetDigitsCount = 0;
+    if( self.handleDeleteBackwards ) {
+        offsetDigitsCount = [[self.text substringToIndex:caretHeadOffset] countDecimalDigits];
+    } else {
+        offsetDigitsCount = [[self.text substringFromIndex:self.text.length - caretTailOffset] countDecimalDigits];
+    }
+
     // format text string
     NSString *newString = [self.textFormatter formatString:self.text];
     self.text = newString;
